@@ -51,7 +51,7 @@ export function Header({ locale }: { locale: Locale }) {
                 <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             </button>
-            <div className="invisible absolute left-0 top-full w-64 rounded-xl border border-brand-100 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full grid w-[520px] grid-cols-2 gap-1 rounded-xl border border-brand-100 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
               {industries.map((industry) => (
                 <Link
                   key={industry.slug}

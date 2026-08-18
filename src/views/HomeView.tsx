@@ -96,7 +96,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             <p className="mt-4 text-brand-700/90">{t.home.industriesText}</p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {industries.map((industry) => (
               <IndustryCard key={industry.slug} industry={industry} locale={locale} />
             ))}
