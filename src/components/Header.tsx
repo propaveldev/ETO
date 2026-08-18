@@ -19,7 +19,7 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-brand-900">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-700 text-white">
-            Э
+            И
           </span>
           <span className="text-lg tracking-tight">{company.name}</span>
         </Link>

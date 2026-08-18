@@ -1,6 +1,6 @@
 export const company = {
-  name: "ЭТО",
-  fullName: "ЭТО.Эксперт",
+  name: "ИТО",
+  fullName: "ИТО.Эксперт",
   tagline: "Промышленные измерения и радарные сканеры",
   vendor: "RETTAR",
   phone: "+7 812 200 86 70",
