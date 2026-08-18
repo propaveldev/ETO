@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { IndustryCase } from "@/data/industries";
+import type { Locale } from "@/i18n/dictionary";
+import { getDictionary } from "@/i18n/dictionary";
 
-export function CaseCard({ item }: { item: IndustryCase }) {
+export function CaseCard({ item, locale = "ru" }: { item: IndustryCase; locale?: Locale }) {
+  const t = getDictionary(locale);
+
   return (
     <div className="overflow-hidden rounded-2xl border border-brand-100 bg-white">
       <div className="relative h-44 w-full bg-brand-50">
@@ -20,13 +24,13 @@ export function CaseCard({ item }: { item: IndustryCase }) {
         <div className="mt-4 space-y-3 border-t border-brand-50 pt-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-brand-400">
-              Сложности измерений
+              {t.common.challenges}
             </p>
             <p className="mt-1 text-sm text-brand-700/80">{item.challenges}</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-accent-600">
-              Решение
+              {t.common.solution}
             </p>
             <p className="mt-1 text-sm font-medium text-brand-900">{item.solution}</p>
           </div>

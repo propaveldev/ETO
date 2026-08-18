@@ -1,11 +1,14 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import type { Locale } from "@/i18n/dictionary";
+import { getDictionary } from "@/i18n/dictionary";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export function ContactForm() {
+export function ContactForm({ locale = "ru" }: { locale?: Locale }) {
   const [status, setStatus] = useState<Status>("idle");
+  const t = getDictionary(locale).contactForm;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,7 +21,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, locale }),
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
@@ -31,10 +34,8 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-2xl border border-brand-100 bg-brand-50 p-6 text-center">
-        <p className="text-lg font-semibold text-brand-900">Спасибо за заявку!</p>
-        <p className="mt-1 text-sm text-brand-700">
-          Мы свяжемся с вами в ближайшее рабочее время.
-        </p>
+        <p className="text-lg font-semibold text-brand-900">{t.successTitle}</p>
+        <p className="mt-1 text-sm text-brand-700">{t.successText}</p>
       </div>
     );
   }
@@ -46,7 +47,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="name" className="text-sm font-medium text-brand-900">
-          Имя
+          {t.name}
         </label>
         <input
           id="name"
@@ -58,7 +59,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="text-sm font-medium text-brand-900">
-          Телефон
+          {t.phone}
         </label>
         <input
           id="phone"
@@ -70,7 +71,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="text-sm font-medium text-brand-900">
-          Email
+          {t.email}
         </label>
         <input
           id="email"
@@ -82,13 +83,13 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="text-sm font-medium text-brand-900">
-          Комментарий
+          {t.message}
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          placeholder="Расскажите о задаче: тип материала, ёмкость, условия эксплуатации"
+          placeholder={t.messagePlaceholder}
           className="mt-1 w-full rounded-lg border border-brand-200 px-3 py-2 text-sm focus:border-accent-500 focus:outline-none"
         />
       </div>
@@ -98,14 +99,10 @@ export function ContactForm() {
         disabled={status === "loading"}
         className="w-full rounded-full bg-accent-500 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-600 disabled:opacity-60"
       >
-        {status === "loading" ? "Отправляем…" : "Отправить заявку"}
+        {status === "loading" ? t.submitting : t.submit}
       </button>
 
-      {status === "error" && (
-        <p className="text-sm text-red-600">
-          Не удалось отправить заявку. Позвоните нам напрямую или попробуйте ещё раз.
-        </p>
-      )}
+      {status === "error" && <p className="text-sm text-red-600">{t.errorText}</p>}
     </form>
   );
 }

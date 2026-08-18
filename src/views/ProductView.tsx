@@ -1,40 +1,62 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { SpecTable } from "@/components/SpecTable";
-import { product3DPro2300 } from "@/data/product";
+import { RadarBeam } from "@/components/RadarBeam";
+import { JsonLd } from "@/components/JsonLd";
+import type { Locale } from "@/i18n/dictionary";
+import { getDictionary } from "@/i18n/dictionary";
+import { product3DPro2300 as ruProduct } from "@/data/product";
+import { product3DPro2300 as enProduct } from "@/data/en/product";
 
-export const metadata: Metadata = {
-  title: "Радарный 3D-сканер 3DPro2300 — характеристики и монтаж",
-  description:
-    "3DPro2300 — радарный 3D-сканер для бункеров и складов сыпучих материалов: 360° сканирование, 16 200 точек, погрешность ±2 мм.",
-};
-
-export default function ProductPage() {
-  const p = product3DPro2300;
+export function ProductView({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale);
+  const p = locale === "ru" ? ruProduct : enProduct;
+  const prefix = locale === "ru" ? "" : "/en";
 
   return (
     <>
-      <section className="bg-brand-950 py-16 text-white">
-        <Container className="grid items-center gap-10 lg:grid-cols-2">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: p.name,
+          category: p.category,
+          description: p.principle,
+          image: `https://eto.expert${p.photo}`,
+          brand: { "@type": "Brand", name: "RETTAR" },
+        }}
+      />
+      <section className="relative overflow-hidden bg-brand-950 py-16 text-white">
+        <div className="pointer-events-none absolute -right-4 top-0 opacity-30">
+          <RadarBeam />
+        </div>
+        <Container className="relative grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-400">
               {p.category}
             </p>
             <h1 className="mt-2 text-4xl font-bold sm:text-5xl">{p.name}</h1>
             <p className="mt-4 max-w-2xl text-lg text-brand-100">{p.tagline}</p>
-            <Link
-              href="/contacts"
-              className="mt-8 inline-block rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white hover:bg-accent-600"
-            >
-              Запросить коммерческое предложение
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href={`${prefix}/contacts`}
+                className="inline-block rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white hover:bg-accent-600"
+              >
+                {t.productPage.requestQuote}
+              </Link>
+              <Link
+                href={`${prefix}/products`}
+                className="inline-block rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+              >
+                {t.common.allProducts}
+              </Link>
+            </div>
           </div>
           <div className="relative mx-auto h-64 w-full max-w-sm sm:h-80">
             <Image
               src={p.photo}
-              alt={`Радарный 3D-сканер ${p.name}`}
+              alt={`${p.category} ${p.name}`}
               fill
               priority
               sizes="(min-width: 1024px) 400px, 80vw"
@@ -47,13 +69,13 @@ export default function ProductPage() {
       <section className="py-16">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="text-2xl font-bold text-brand-900">Принцип измерения</h2>
+            <h2 className="text-2xl font-bold text-brand-900">{t.productPage.principleHeading}</h2>
             <p className="mt-4 leading-relaxed text-brand-700/90">{p.principle}</p>
           </div>
           <div className="relative h-64 w-full overflow-hidden rounded-2xl bg-brand-50 sm:h-80">
             <Image
               src={p.principleImage}
-              alt="Принцип измерения радарного 3D-сканера"
+              alt={t.productPage.principleHeading}
               fill
               sizes="(min-width: 1024px) 500px, 100vw"
               className="object-contain p-4"
@@ -64,7 +86,7 @@ export default function ProductPage() {
 
       <section className="bg-brand-50/60 py-16">
         <Container>
-          <h2 className="text-2xl font-bold text-brand-900">Преимущества</h2>
+          <h2 className="text-2xl font-bold text-brand-900">{t.productPage.advantagesHeading}</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {p.advantages.map((a) => (
               <div key={a.title} className="rounded-2xl border border-brand-100 bg-white p-6">
@@ -78,7 +100,7 @@ export default function ProductPage() {
 
       <section className="py-16">
         <Container>
-          <h2 className="text-2xl font-bold text-brand-900">Технические характеристики</h2>
+          <h2 className="text-2xl font-bold text-brand-900">{t.productPage.specsHeading}</h2>
           <div className="mt-8">
             <SpecTable specs={p.specs} />
           </div>
@@ -87,7 +109,9 @@ export default function ProductPage() {
 
       <section className="bg-brand-50/60 py-16">
         <Container>
-          <h2 className="text-2xl font-bold text-brand-900">Области применения</h2>
+          <h2 className="text-2xl font-bold text-brand-900">
+            {t.productPage.applicationAreasHeading}
+          </h2>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {p.applicationAreas.map((area) => (
               <div
@@ -113,13 +137,13 @@ export default function ProductPage() {
       <section className="py-16">
         <Container className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold text-brand-900">Схема монтажа</h2>
+            <h2 className="text-2xl font-bold text-brand-900">{t.productPage.mountingHeading}</h2>
             <p className="mt-4 text-brand-700/90">{p.mounting.intro}</p>
 
             <div className="relative mt-6 h-56 w-full overflow-hidden rounded-2xl bg-brand-50">
               <Image
                 src={p.mountingImage}
-                alt="Варианты установки одного, двух и трёх сканеров на бункере"
+                alt={t.productPage.mountingHeading}
                 fill
                 sizes="(min-width: 1024px) 500px, 100vw"
                 className="object-contain p-2"
@@ -128,7 +152,10 @@ export default function ProductPage() {
 
             <ul className="mt-6 space-y-3">
               {p.mounting.variants.map((v) => (
-                <li key={v} className="flex gap-3 rounded-xl border border-brand-100 bg-white p-4 text-sm text-brand-900">
+                <li
+                  key={v}
+                  className="flex gap-3 rounded-xl border border-brand-100 bg-white p-4 text-sm text-brand-900"
+                >
                   <span className="mt-0.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-500" />
                   {v}
                 </li>
@@ -138,10 +165,15 @@ export default function ProductPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-brand-900">Варианты подключения и связи</h2>
+            <h2 className="text-2xl font-bold text-brand-900">
+              {t.productPage.connectivityHeading}
+            </h2>
             <ul className="mt-6 space-y-3">
               {p.connectivity.map((c) => (
-                <li key={c} className="flex gap-3 rounded-xl border border-brand-100 bg-white p-4 text-sm text-brand-900">
+                <li
+                  key={c}
+                  className="flex gap-3 rounded-xl border border-brand-100 bg-white p-4 text-sm text-brand-900"
+                >
                   <span className="mt-0.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" />
                   {c}
                 </li>
@@ -153,18 +185,13 @@ export default function ProductPage() {
 
       <section className="py-16">
         <Container className="flex flex-col items-center gap-6 rounded-3xl bg-brand-900 p-10 text-center text-white sm:p-14">
-          <h2 className="text-2xl font-bold sm:text-3xl">
-            Нужен подбор прибора под конкретный бункер?
-          </h2>
-          <p className="max-w-xl text-brand-100">
-            Пришлите параметры объекта — подскажем количество сканеров, вариант монтажа и способ
-            связи.
-          </p>
+          <h2 className="text-2xl font-bold sm:text-3xl">{t.productPage.ctaHeading}</h2>
+          <p className="max-w-xl text-brand-100">{t.productPage.ctaText}</p>
           <Link
-            href="/contacts"
+            href={`${prefix}/contacts`}
             className="rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white hover:bg-accent-600"
           >
-            Оставить заявку
+            {t.productPage.ctaButton}
           </Link>
         </Container>
       </section>

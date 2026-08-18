@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Industry } from "@/data/industries";
+import type { Locale } from "@/i18n/dictionary";
+import { getDictionary } from "@/i18n/dictionary";
 
-export function IndustryCard({ industry }: { industry: Industry }) {
+export function IndustryCard({ industry, locale = "ru" }: { industry: Industry; locale?: Locale }) {
+  const t = getDictionary(locale);
+  const prefix = locale === "ru" ? "" : "/en";
+
   return (
     <Link
-      href={`/industries/${industry.slug}`}
+      href={`${prefix}/industries/${industry.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
       <div className="relative h-40 w-full bg-brand-50">
@@ -23,7 +28,7 @@ export function IndustryCard({ industry }: { industry: Industry }) {
           <p className="mt-2 text-sm text-brand-700/80">{industry.cardText}</p>
         </div>
         <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-600 group-hover:gap-2">
-          Подробнее
+          {t.common.readMore}
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
             <path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" />
           </svg>
