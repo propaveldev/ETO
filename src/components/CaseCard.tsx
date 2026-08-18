@@ -1,0 +1,37 @@
+import Image from "next/image";
+import { IndustryCase } from "@/data/industries";
+
+export function CaseCard({ item }: { item: IndustryCase }) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-brand-100 bg-white">
+      <div className="relative h-44 w-full bg-brand-50">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          sizes="(min-width: 768px) 480px, 100vw"
+          className="object-contain p-3"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-base font-semibold text-brand-900">{item.title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-brand-700/90">{item.description}</p>
+
+        <div className="mt-4 space-y-3 border-t border-brand-50 pt-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-400">
+              Сложности измерений
+            </p>
+            <p className="mt-1 text-sm text-brand-700/80">{item.challenges}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-accent-600">
+              Решение
+            </p>
+            <p className="mt-1 text-sm font-medium text-brand-900">{item.solution}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
