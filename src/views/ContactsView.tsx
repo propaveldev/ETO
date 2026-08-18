@@ -1,3 +1,4 @@
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
 import type { Locale } from "@/i18n/dictionary";
@@ -26,31 +27,40 @@ export function ContactsView({ locale }: { locale: Locale }) {
           </p>
 
           <dl className="mt-10 space-y-6">
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">
-                {t.contactForm.phone}
-              </dt>
-              <dd className="mt-1">
-                <a href={company.phoneHref} className="text-lg font-semibold text-brand-900 hover:text-accent-600">
-                  {company.phone}
-                </a>
-              </dd>
+            <div className="flex gap-3">
+              <Phone size={20} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-accent-600" />
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">
+                  {t.contactForm.phone}
+                </dt>
+                <dd className="mt-1">
+                  <a href={company.phoneHref} className="text-lg font-semibold text-brand-900 hover:text-accent-600">
+                    {company.phone}
+                  </a>
+                </dd>
+              </div>
             </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">
-                {t.contactForm.email}
-              </dt>
-              <dd className="mt-1">
-                <a href={`mailto:${company.email}`} className="text-lg font-semibold text-brand-900 hover:text-accent-600">
-                  {company.email}
-                </a>
-              </dd>
+            <div className="flex gap-3">
+              <Mail size={20} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-accent-600" />
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">
+                  {t.contactForm.email}
+                </dt>
+                <dd className="mt-1">
+                  <a href={`mailto:${company.email}`} className="text-lg font-semibold text-brand-900 hover:text-accent-600">
+                    {company.email}
+                  </a>
+                </dd>
+              </div>
             </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">
-                {locale === "ru" ? "Адрес" : "Address"}
-              </dt>
-              <dd className="mt-1 text-brand-900">{company.address}</dd>
+            <div className="flex gap-3">
+              <MapPin size={20} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-accent-600" />
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">
+                  {locale === "ru" ? "Адрес" : "Address"}
+                </dt>
+                <dd className="mt-1 text-brand-900">{company.address}</dd>
+              </div>
             </div>
           </dl>
         </div>

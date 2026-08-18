@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { SpecTable } from "@/components/SpecTable";
 import { RadarBeam } from "@/components/RadarBeam";
 import { JsonLd } from "@/components/JsonLd";
+import { productAdvantageIcons } from "@/components/icons/maps";
 import type { Locale } from "@/i18n/dictionary";
 import { getDictionary } from "@/i18n/dictionary";
 import { product3DPro2300 as ruProduct } from "@/data/product";
@@ -88,12 +89,22 @@ export function ProductView({ locale }: { locale: Locale }) {
         <Container>
           <h2 className="text-2xl font-bold text-brand-900">{t.productPage.advantagesHeading}</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {p.advantages.map((a) => (
-              <div key={a.title} className="rounded-2xl border border-brand-100 bg-white p-6">
-                <h3 className="font-semibold text-brand-900">{a.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-700/90">{a.text}</p>
-              </div>
-            ))}
+            {p.advantages.map((a, i) => {
+              const Icon = productAdvantageIcons[i];
+              return (
+                <div key={a.title} className="rounded-2xl border border-brand-100 bg-white p-6">
+                  <div className="flex items-center gap-3">
+                    {Icon && (
+                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                        <Icon size={20} strokeWidth={1.75} />
+                      </span>
+                    )}
+                    <h3 className="font-semibold text-brand-900">{a.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-brand-700/90">{a.text}</p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>

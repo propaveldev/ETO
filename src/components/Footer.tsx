@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
 import { Container } from "./Container";
 import type { Locale } from "@/i18n/dictionary";
 import { getDictionary } from "@/i18n/dictionary";
@@ -60,12 +61,14 @@ export function Footer({ locale }: { locale: Locale }) {
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <a href={company.phoneHref} className="hover:text-white">
+              <a href={company.phoneHref} className="flex items-center gap-2 hover:text-white">
+                <Phone size={14} strokeWidth={1.75} className="flex-shrink-0" />
                 {company.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${company.email}`} className="hover:text-white">
+              <a href={`mailto:${company.email}`} className="flex items-center gap-2 hover:text-white">
+                <Mail size={14} strokeWidth={1.75} className="flex-shrink-0" />
                 {company.email}
               </a>
             </li>

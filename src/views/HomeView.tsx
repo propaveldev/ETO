@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Award, Users, Radar, Ruler } from "lucide-react";
 import { Container } from "@/components/Container";
 import { IndustryCard } from "@/components/IndustryCard";
 import { RadarBeam } from "@/components/RadarBeam";
 import { CertificationSection } from "@/components/CertificationSection";
 import type { Locale } from "@/i18n/dictionary";
 import { getDictionary } from "@/i18n/dictionary";
+
+const statIcons = [Award, Users, Radar, Ruler];
 
 import { industries as ruIndustries } from "@/data/industries";
 import { industries as enIndustries } from "@/data/en/industries";
@@ -77,12 +80,16 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <section className="border-b border-brand-100 bg-brand-50/60 py-10">
         <Container className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center sm:text-left">
-              <p className="text-3xl font-bold text-brand-900">{stat.value}</p>
-              <p className="mt-1 text-xs text-brand-700/80 sm:text-sm">{stat.label}</p>
-            </div>
-          ))}
+          {stats.map((stat, i) => {
+            const Icon = statIcons[i];
+            return (
+              <div key={stat.label} className="flex flex-col items-center gap-1 text-center sm:items-start sm:text-left">
+                {Icon && <Icon size={20} strokeWidth={1.75} className="mb-1 text-accent-600" />}
+                <p className="text-3xl font-bold text-brand-900">{stat.value}</p>
+                <p className="mt-1 text-xs text-brand-700/80 sm:text-sm">{stat.label}</p>
+              </div>
+            );
+          })}
         </Container>
       </section>
 

@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/dictionary";
 import { getDictionary } from "@/i18n/dictionary";
 import { catalog as ruCatalog, selectionGuide as ruGuide } from "@/data/catalog";
 import { catalog as enCatalog, selectionGuide as enGuide } from "@/data/en/catalog";
+import { catalogCategoryIcons, selectionGuideIcons } from "@/components/icons/maps";
 
 export function CatalogView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -24,25 +25,51 @@ export function CatalogView({ locale }: { locale: Locale }) {
         <Container>
           <h2 className="text-2xl font-bold text-brand-900">{t.catalogPage.guideHeading}</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {guide.map((g) => (
-              <div key={g.question} className="rounded-2xl border border-brand-100 bg-white p-6">
-                <p className="font-semibold text-brand-900">{g.question}</p>
-                <p className="mt-2 text-sm leading-relaxed text-brand-700/90">{g.answer}</p>
-              </div>
-            ))}
+            {guide.map((g, i) => {
+              const Icon = selectionGuideIcons[i];
+              return (
+                <div key={g.question} className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-6">
+                  {Icon && (
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                      <Icon size={20} strokeWidth={1.75} />
+                    </span>
+                  )}
+                  <div>
+                    <p className="font-semibold text-brand-900">{g.question}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-brand-700/90">{g.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      {catalog.map((category) => (
+      {catalog.map((category) => {
+        const CategoryIcon = catalogCategoryIcons[category.id];
+        return (
         <section key={category.id} className="py-14">
           <Container>
-            <h2 className="text-2xl font-bold text-brand-900">{category.title}</h2>
+            <div className="flex items-center gap-3">
+              {CategoryIcon && (
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand-900 text-white">
+                  <CategoryIcon size={22} strokeWidth={1.75} />
+                </span>
+              )}
+              <h2 className="text-2xl font-bold text-brand-900">{category.title}</h2>
+            </div>
             <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {category.items.map((item) => {
                 const card = (
                   <div className="flex h-full flex-col rounded-2xl border border-brand-100 bg-white p-6">
-                    <h3 className="font-semibold text-brand-900">{item.name}</h3>
+                    <div className="flex items-center gap-3">
+                      {CategoryIcon && (
+                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                          <CategoryIcon size={18} strokeWidth={1.75} />
+                        </span>
+                      )}
+                      <h3 className="font-semibold text-brand-900">{item.name}</h3>
+                    </div>
                     <p className="mt-2 text-sm text-brand-700/80">{item.purpose}</p>
                     <dl className="mt-4 flex-1 space-y-1.5 border-t border-brand-50 pt-4">
                       {item.keySpecs.map((spec) => (
@@ -74,7 +101,8 @@ export function CatalogView({ locale }: { locale: Locale }) {
             </div>
           </Container>
         </section>
-      ))}
+        );
+      })}
 
       <section className="pb-20">
         <Container className="flex flex-col items-center gap-6 rounded-3xl bg-brand-50 p-10 text-center sm:p-14">

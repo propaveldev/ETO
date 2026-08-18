@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Industry } from "@/data/industries";
 import type { Locale } from "@/i18n/dictionary";
 import { getDictionary } from "@/i18n/dictionary";
+import { industryIcons } from "@/components/icons/maps";
 
 export function IndustryCard({ industry, locale = "ru" }: { industry: Industry; locale?: Locale }) {
   const t = getDictionary(locale);
   const prefix = locale === "ru" ? "" : "/en";
+  const Icon = industryIcons[industry.slug];
 
   return (
     <Link
@@ -21,6 +23,11 @@ export function IndustryCard({ industry, locale = "ru" }: { industry: Industry; 
           sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
         />
+        {Icon && (
+          <span className="absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-brand-700 shadow-sm backdrop-blur">
+            <Icon size={20} strokeWidth={1.75} />
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>

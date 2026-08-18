@@ -9,6 +9,7 @@ import { industries as ruIndustries } from "@/data/industries";
 import { industries as enIndustries } from "@/data/en/industries";
 import { company as ruCompany } from "@/data/company";
 import { company as enCompany } from "@/data/en/company";
+import { industryIcons } from "@/components/icons/maps";
 
 export function Header({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
@@ -52,15 +53,19 @@ export function Header({ locale }: { locale: Locale }) {
               </svg>
             </button>
             <div className="invisible absolute left-0 top-full grid w-[520px] grid-cols-2 gap-1 rounded-xl border border-brand-100 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
-              {industries.map((industry) => (
-                <Link
-                  key={industry.slug}
-                  href={`${prefix}/industries/${industry.slug}`}
-                  className="block rounded-lg px-3 py-2 text-sm text-brand-900 hover:bg-brand-50"
-                >
-                  {industry.shortTitle}
-                </Link>
-              ))}
+              {industries.map((industry) => {
+                const Icon = industryIcons[industry.slug];
+                return (
+                  <Link
+                    key={industry.slug}
+                    href={`${prefix}/industries/${industry.slug}`}
+                    className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-brand-900 hover:bg-brand-50"
+                  >
+                    {Icon && <Icon size={16} strokeWidth={1.75} className="flex-shrink-0 text-brand-400" />}
+                    {industry.shortTitle}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <Link href={`${prefix}/contacts`} className="text-sm font-medium text-brand-900/80 hover:text-accent-600">
@@ -108,16 +113,20 @@ export function Header({ locale }: { locale: Locale }) {
             <p className="px-3 pt-2 text-xs font-semibold uppercase tracking-wide text-brand-400">
               {t.nav.industries}
             </p>
-            {industries.map((industry) => (
-              <Link
-                key={industry.slug}
-                href={`${prefix}/industries/${industry.slug}`}
-                className="rounded-lg px-3 py-2 text-sm text-brand-900 hover:bg-brand-50"
-                onClick={() => setOpen(false)}
-              >
-                {industry.shortTitle}
-              </Link>
-            ))}
+            {industries.map((industry) => {
+              const Icon = industryIcons[industry.slug];
+              return (
+                <Link
+                  key={industry.slug}
+                  href={`${prefix}/industries/${industry.slug}`}
+                  className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-brand-900 hover:bg-brand-50"
+                  onClick={() => setOpen(false)}
+                >
+                  {Icon && <Icon size={16} strokeWidth={1.75} className="flex-shrink-0 text-brand-400" />}
+                  {industry.shortTitle}
+                </Link>
+              );
+            })}
             <Link
               href={`${prefix}/contacts`}
               className="rounded-lg px-3 py-2 text-sm font-medium text-brand-900 hover:bg-brand-50"
