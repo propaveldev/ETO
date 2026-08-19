@@ -15,7 +15,7 @@ export function CaseCard({ item, locale = "ru" }: { item: IndustryCase; locale?:
           alt={item.title}
           fill
           sizes="(min-width: 768px) 480px, 100vw"
-          className="object-contain p-3"
+          className="object-cover"
         />
       </div>
       <div className="p-6">

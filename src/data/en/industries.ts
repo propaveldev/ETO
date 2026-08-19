@@ -68,8 +68,8 @@ export const industries: Industry[] = [
     title: "Food industry",
     shortTitle: "Food industry",
     cardText: "Non-contact level control for grain, flour, sugar and other bulk materials in silos and bins.",
-    cardImage: "/images/applications/silo.png",
-    heroImage: "/images/applications/silo.png",
+    cardImage: "/images/scenes/silo.svg",
+    heroImage: "/images/scenes/silo.svg",
     intro:
       "At grain elevators, flour mills and sugar plants it's critical to know exactly how much material is in each silo — for procurement planning, intake and inventory. RETTAR radar technology isn't bothered by dust, condensation or product build-up, which matters a lot in food production.",
     cases: [
@@ -79,7 +79,7 @@ export const industries: Industry[] = [
           "Continuous monitoring of the grain pile height in every elevator silo enables accurate inventory tracking and timely planning of shipments and intake.",
         challenges: "Conical pile shape, dust during loading, varying flow properties across crops (wheat, corn, sunflower).",
         solution: "CFR6900 bulk solids radar level meter",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "3D inventory of flour and sugar storage",
@@ -87,7 +87,7 @@ export const industries: Industry[] = [
           "3D silo scanning provides a full picture of the product surface and an accurate volume/mass calculation of the remaining stock — without stopping production for manual measurements.",
         challenges: "Fine product generates heavy dust; build-up on the walls distorts the pile shape.",
         solution: "3DPro2300 radar 3D scanner",
-        image: "/images/applications/warehouse.png",
+        image: "/images/scenes/warehouse.svg",
       },
       {
         title: "Raw material feed control for feed mixing lines",
@@ -95,7 +95,7 @@ export const industries: Industry[] = [
           "Compound feed production requires real-time control of the incoming material profile and flow rate so dosing matches the recipe.",
         challenges: "A dynamic feed process that's hard to quantify; several parameters need monitoring simultaneously.",
         solution: "Radar 2D scanner",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "High/low level alarm in intake bins",
@@ -103,7 +103,7 @@ export const industries: Industry[] = [
           "Fast, reliable high and low level alarms in intake bins prevent overflow and line downtime from material shortage.",
         challenges: "Dust and vibration in the unloading zone, risk of product build-up on the sensing element.",
         solution: "Microwave point level switch (non-contact, no clogging)",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "Level control in tanks with liquid food media",
@@ -111,7 +111,7 @@ export const industries: Industry[] = [
           "Syrups, vegetable oils and other liquid ingredients require accurate, hygienic level measurement in tanks and tank farms.",
         challenges: "Steam and condensation above the product surface, varying tank geometry, hygienic material requirements.",
         solution: "CFR6400 integrated radar level meter for liquids",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/tank-farm.svg",
       },
     ],
   },
@@ -120,8 +120,8 @@ export const industries: Industry[] = [
     title: "Chemical industry",
     shortTitle: "Chemical industry",
     cardText: "Level, density and flow measurement of aggressive media in reactors, tanks and pipelines.",
-    cardImage: "/images/applications/tank-farm.png",
-    heroImage: "/images/applications/tank-farm.png",
+    cardImage: "/images/scenes/tank-farm.svg",
+    heroImage: "/images/scenes/tank-farm.svg",
     intro:
       "Aggressive, viscous and abrasive media are everyday conditions for instruments in chemical plants. RETTAR's non-contact radar technology and wear-resistant designs keep measuring where contact sensors fail quickly.",
     cases: [
@@ -131,7 +131,7 @@ export const industries: Industry[] = [
           "Continuous level measurement of acids, alkalis and solvents in storage tanks without the sensing element contacting the medium.",
         challenges: "Chemically aggressive medium, vapors and foam on the surface, varying tank geometry.",
         solution: "CFR6400 integrated radar level meter for liquids",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/tank.svg",
       },
       {
         title: "Flow and density control of process solutions",
@@ -139,7 +139,7 @@ export const industries: Industry[] = [
           "Accurate flow and density control of reagents and process solutions stabilizes the process and reduces chemical consumption.",
         challenges: "Flow subject to significant fluctuation, highly aggressive medium, possible suspended particles.",
         solution: "Density meter + acoustic flowmeter / electromagnetic flowmeter",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/pipeline.svg",
       },
       {
         title: "Interface level in separators and settlers",
@@ -147,7 +147,7 @@ export const industries: Industry[] = [
           "Accurately locating the interface between layers (water/organics, sludge/overflow) optimizes the separation process and reagent dosing.",
         challenges: "Unstable medium composition, need for wear and corrosion resistance, continuous high-precision measurement.",
         solution: "SLD1100 interface level meter + electromagnetic flowmeter",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/separator.svg",
       },
       {
         title: "3D monitoring of bulk chemical raw material silos",
@@ -155,7 +155,7 @@ export const industries: Industry[] = [
           "For granular and powdered raw materials (polymers, salts, mineral components), 3D scanning provides an accurate volume and mass of stock on hand.",
         challenges: "Dust during loading, multiple signal reflections from the material, dynamically changing pile shape.",
         solution: "3DPro2300 radar 3D scanner",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "Pipelines and sumps for process slurries",
@@ -163,7 +163,7 @@ export const industries: Industry[] = [
           "Transporting slurry through pipelines and accumulating it in sumps requires reliable level and flow control under wear and corrosion.",
         challenges: "High viscosity and abrasiveness of the medium, strong interference for contact instruments.",
         solution: "Density meter + radar level meter + electromagnetic/acoustic flowmeter",
-        image: "/images/applications/warehouse.png",
+        image: "/images/scenes/pipeline.svg",
       },
     ],
   },
@@ -172,8 +172,8 @@ export const industries: Industry[] = [
     title: "Oil & gas industry",
     shortTitle: "Oil & gas industry",
     cardText: "Product accounting, tank and separator control, and metering skids across production, storage and transport.",
-    cardImage: "/images/applications/tank-farm.png",
-    heroImage: "/images/applications/tank-farm.png",
+    cardImage: "/images/scenes/tank-farm.svg",
+    heroImage: "/images/scenes/tank-farm.svg",
     intro:
       "Oil and petroleum product production, storage and transport sites take measurements in hazardous areas, in contact with aggressive and volatile media. RETTAR's non-contact radar technology delivers accurate custody-transfer measurement without putting staff or equipment at risk.",
     cases: [
@@ -183,7 +183,7 @@ export const industries: Industry[] = [
           "Continuous level monitoring in vertical steel tanks provides accurate inventory accounting and prevents overflow during receipt and dispatch.",
         challenges: "Hydrocarbon vapors, surface foam, explosion-protection requirements.",
         solution: "CFR6400 integrated radar level meter for liquids",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/tank-farm.svg",
       },
       {
         title: "Oil/water interface control in separators",
@@ -191,7 +191,7 @@ export const industries: Industry[] = [
           "Precisely locating the phase boundary in separation units enables efficient produced-water discharge management without losing crude oil.",
         challenges: "Variable emulsion density, probe fouling, aggressive medium.",
         solution: "SLD1100 interface level meter + electromagnetic flowmeter",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/separator.svg",
       },
       {
         title: "Crude oil and petroleum product flow accounting at custody-transfer stations",
@@ -199,7 +199,7 @@ export const industries: Industry[] = [
           "Accurate metering of petroleum product transfer between tanks and into pipelines is required for commercial settlement between supplier and buyer.",
         challenges: "High accuracy requirements, hazardous area, medium viscosity.",
         solution: "Electromagnetic flowmeter",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/pipeline.svg",
       },
       {
         title: "High-level alarm in drainage tanks and sludge pits",
@@ -207,7 +207,7 @@ export const industries: Industry[] = [
           "Emergency overflow alarms on drainage tanks and sludge pits help prevent spills and environmental damage.",
         challenges: "Aggressive vapors, sensor icing in winter, remote site locations.",
         solution: "Microwave point level switch",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/tank.svg",
       },
     ],
   },
@@ -235,7 +235,7 @@ export const industries: Industry[] = [
           "Regular cooling water level measurement for turbine and boiler equipment ensures an adequate supply for production needs.",
         challenges: "Steam interference, high humidity, varying tank geometry.",
         solution: "CFR6400 integrated radar level meter for liquids",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/tank-farm.svg",
       },
       {
         title: "Coal feed monitoring on the boiler house conveyor",
@@ -295,7 +295,7 @@ export const industries: Industry[] = [
           "Controlling slurry parameters in slag hydro-removal systems helps maintain process stability and reduce pipeline wear.",
         challenges: "High abrasiveness, elevated temperature, medium viscosity.",
         solution: "Density meter + electromagnetic flowmeter",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/pipeline.svg",
       },
     ],
   },
@@ -304,8 +304,8 @@ export const industries: Industry[] = [
     title: "Building materials & cement",
     shortTitle: "Building materials & cement",
     cardText: "Cement silo, batching plant and aggregate stockpile control.",
-    cardImage: "/images/applications/silo.png",
-    heroImage: "/images/applications/silo.png",
+    cardImage: "/images/scenes/silo.svg",
+    heroImage: "/images/scenes/silo.svg",
     intro:
       "At cement plants and concrete batching facilities, dosing accuracy and silo inventory control are critical. RETTAR radar technology withstands the heavy dust and build-up typical of this industry.",
     cases: [
@@ -315,7 +315,7 @@ export const industries: Industry[] = [
           "Continuous cement and lime level control in silos enables accurate supply planning and finished product dispatch.",
         challenges: "Heavy dust, material build-up on the walls, condensation.",
         solution: "CFR6900 bulk solids radar level meter",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "3D inventory of aggregate stockpiles (crushed stone, sand)",
@@ -323,7 +323,7 @@ export const industries: Industry[] = [
           "Calculating the volume of non-metallic material stock at open storage sites provides accurate data for procurement and production planning.",
         challenges: "Uneven pile surface, shape changes during loading and unloading.",
         solution: "3DPro2300 radar 3D scanner",
-        image: "/images/applications/warehouse.png",
+        image: "/images/scenes/warehouse.svg",
       },
       {
         title: "Level control in batching plant dosing bins",
@@ -331,14 +331,14 @@ export const industries: Industry[] = [
           "Accurate dosing of concrete mix components by level in weighing bins ensures consistent finished mix quality.",
         challenges: "Vibration from dosing equipment, fast loading/unloading dynamics.",
         solution: "2DPro2100 radar 2D scanner",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "High-level alarm in clinker receiving bins",
         description: "Timely alarms prevent overflow and downtime on the clinker kiln line.",
         challenges: "High temperature, heavy dust, material abrasiveness.",
         solution: "Microwave point level switch",
-        image: "/images/applications/warehouse.png",
+        image: "/images/scenes/silo.svg",
       },
     ],
   },
@@ -391,8 +391,8 @@ export const industries: Industry[] = [
     title: "Pharmaceutical industry",
     shortTitle: "Pharmaceutical industry",
     cardText: "Hygienic level control of raw materials and solutions on packaging lines and in reactors.",
-    cardImage: "/images/applications/tanks.png",
-    heroImage: "/images/applications/tanks.png",
+    cardImage: "/images/scenes/tank.svg",
+    heroImage: "/images/scenes/tank.svg",
     intro:
       "Pharmaceutical production demands hygienic contact materials and precise dosing when working with expensive raw materials in small quantities. RETTAR's non-contact radar technology poses no contamination risk to the product.",
     cases: [
@@ -402,7 +402,7 @@ export const industries: Industry[] = [
           "Monitoring the remaining powdered raw material (lactose, starch, active substances) in receiving bins keeps the packaging line running smoothly.",
         challenges: "Strict hygiene requirements, fine dust, small vessel volumes.",
         solution: "CFR6900 radar level meter, hygienic design",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
       {
         title: "Level control in reactors and solution preparation vessels",
@@ -410,7 +410,7 @@ export const industries: Industry[] = [
           "Measuring the level of liquid pharmaceutical substances and solutions in reactors ensures recipe accuracy and process control.",
         challenges: "Contact material purity requirements, surface foam, medium viscosity.",
         solution: "CFR6400 integrated radar level meter for liquids",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/tank.svg",
       },
       {
         title: "3D inventory of finished goods warehouses",
@@ -418,14 +418,14 @@ export const industries: Industry[] = [
           "Accurate accounting of remaining bulk raw materials and intermediates in storage reduces the need for labor-intensive manual recounts.",
         challenges: "Small storage volumes, high accuracy requirements.",
         solution: "3DPro2300 radar 3D scanner",
-        image: "/images/applications/warehouse.png",
+        image: "/images/scenes/warehouse.svg",
       },
       {
         title: "High-level alarm in dosing bins",
         description: "Timely alarms prevent overflow during automatic component dosing in the production process.",
         challenges: "Sensitivity to contamination, tight mounting dimensions.",
         solution: "Microwave point level switch",
-        image: "/images/applications/silo.png",
+        image: "/images/scenes/silo.svg",
       },
     ],
   },
@@ -434,8 +434,8 @@ export const industries: Industry[] = [
     title: "Environmental & water utilities",
     shortTitle: "Environmental & water utilities",
     cardText: "Settling tank, wastewater reservoir and landfill control at treatment facilities.",
-    cardImage: "/images/applications/tank-farm.png",
-    heroImage: "/images/applications/tank-farm.png",
+    cardImage: "/images/scenes/tank-farm.svg",
+    heroImage: "/images/scenes/tank-farm.svg",
     intro:
       "At treatment plants and waste sites, accurate measurement is essential for regulatory compliance and efficient process control. RETTAR offers solutions resistant to the aggressive, abrasive media typical of wastewater and sludge.",
     cases: [
@@ -445,28 +445,28 @@ export const industries: Industry[] = [
           "Locating the boundary between sludge and clarified water enables process control and timely sludge removal.",
         challenges: "Unstable medium composition, instrument wear-resistance requirements.",
         solution: "SLD1100 interface level meter",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/separator.svg",
       },
       {
         title: "Level control in wastewater accumulation tanks",
         description: "Monitoring reserve capacity and preventing overflow of receiving tanks keeps treatment facilities running smoothly.",
         challenges: "Aggressive medium, vapors, corrosivity.",
         solution: "CFR6400 integrated radar level meter for liquids",
-        image: "/images/applications/tank-farm.png",
+        image: "/images/scenes/tank-farm.svg",
       },
       {
         title: "Flow and density control of sludge at drying beds",
         description: "Controlling dewatered sludge parameters during transport for disposal helps optimize hauling logistics.",
         challenges: "High viscosity, abrasiveness, variable sludge density.",
         solution: "Density meter + electromagnetic flowmeter",
-        image: "/images/applications/tanks.png",
+        image: "/images/scenes/pipeline.svg",
       },
       {
         title: "3D monitoring of landfills and waste storage sites",
         description: "Calculating waste volume helps control landfill fill levels and prepare environmental reporting.",
         challenges: "Large site area, uneven terrain, weather conditions.",
         solution: "Radar 3D scanner + laser scanner",
-        image: "/images/applications/warehouse.png",
+        image: "/images/scenes/warehouse.svg",
       },
     ],
   },

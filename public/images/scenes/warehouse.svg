@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f4f1fb"/>
+  <rect x="0" y="430" width="800" height="70" fill="#e6dff6"/>
+
+  <!-- gantry / support frame -->
+  <line x1="120" y1="430" x2="220" y2="120" stroke="#c9b9ec" stroke-width="10" stroke-linecap="round"/>
+  <line x1="680" y1="430" x2="580" y2="120" stroke="#c9b9ec" stroke-width="10" stroke-linecap="round"/>
+  <line x1="220" y1="120" x2="580" y2="120" stroke="#c9b9ec" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- stockpile mound -->
+  <path d="M 140 430
+           C 200 300, 300 250, 400 250
+           C 500 250, 600 300, 660 430
+           Z"
+        fill="#e8792a"/>
+  <path d="M 250 430 C 290 340 360 300 400 300 C 460 300 520 350 560 430 Z" fill="#ad4d15" opacity="0.55"/>
+
+  <!-- radar on pole, scanning over the pile -->
+  <rect x="80" y="150" width="14" height="230" fill="#c9b9ec"/>
+  <rect x="65" y="128" width="44" height="30" rx="7" fill="#241645"/>
+  <circle cx="87" cy="143" r="6" fill="#f3a25e"/>
+
+  <path d="M 87 158 Q 300 190 500 240" fill="none" stroke="#8763c9" stroke-width="3" stroke-dasharray="3 10"/>
+  <path d="M 87 158 Q 320 230 600 330" fill="none" stroke="#8763c9" stroke-width="3" stroke-dasharray="3 10"/>
+  <path d="M 87 158 Q 260 260 400 420" fill="none" stroke="#8763c9" stroke-width="3" stroke-dasharray="3 10"/>
+</svg>

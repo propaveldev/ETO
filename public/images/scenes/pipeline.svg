@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f4f1fb"/>
+  <rect x="0" y="430" width="800" height="70" fill="#e6dff6"/>
+
+  <!-- pipe supports -->
+  <rect x="180" y="290" width="14" height="140" fill="#c9b9ec"/>
+  <rect x="606" y="290" width="14" height="140" fill="#c9b9ec"/>
+
+  <!-- pipe -->
+  <rect x="120" y="230" width="560" height="80" rx="40" fill="#ffffff" stroke="#442a71" stroke-width="5"/>
+  <rect x="140" y="252" width="520" height="36" rx="18" fill="#8763c9"/>
+
+  <!-- flow arrows -->
+  <polygon points="240,270 220,258 220,282" fill="#f4f1fb"/>
+  <polygon points="360,270 340,258 340,282" fill="#f4f1fb"/>
+  <polygon points="480,270 460,258 460,282" fill="#f4f1fb"/>
+
+  <!-- clamp-on sensor -->
+  <rect x="368" y="150" width="64" height="50" rx="8" fill="#241645"/>
+  <rect x="392" y="200" width="16" height="34" fill="#241645"/>
+  <circle cx="400" cy="175" r="8" fill="#f3a25e"/>
+  <line x1="400" y1="234" x2="400" y2="252" stroke="#e8792a" stroke-width="4"/>
+</svg>

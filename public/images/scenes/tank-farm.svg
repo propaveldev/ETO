@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f4f1fb"/>
+  <rect x="0" y="430" width="800" height="70" fill="#e6dff6"/>
+
+  <!-- pipe connecting bases -->
+  <rect x="160" y="410" width="480" height="12" fill="#c9b9ec"/>
+
+  <!-- left tank (shorter) -->
+  <rect x="150" y="270" width="130" height="150" rx="14" fill="#ffffff" stroke="#442a71" stroke-width="4"/>
+  <ellipse cx="215" cy="270" rx="65" ry="14" fill="#e6dff6" stroke="#442a71" stroke-width="4"/>
+  <rect x="156" y="330" width="118" height="80" fill="#a68bdd" opacity="0.85"/>
+
+  <!-- right tank (shorter) -->
+  <rect x="520" y="290" width="130" height="130" rx="14" fill="#ffffff" stroke="#442a71" stroke-width="4"/>
+  <ellipse cx="585" cy="290" rx="65" ry="14" fill="#e6dff6" stroke="#442a71" stroke-width="4"/>
+  <rect x="526" y="340" width="118" height="70" fill="#a68bdd" opacity="0.85"/>
+
+  <!-- main center tank (taller, with sensor) -->
+  <rect x="330" y="160" width="140" height="260" rx="16" fill="#ffffff" stroke="#442a71" stroke-width="5"/>
+  <ellipse cx="400" cy="160" rx="70" ry="16" fill="#e6dff6" stroke="#442a71" stroke-width="5"/>
+  <rect x="336" y="250" width="128" height="160" fill="#8763c9"/>
+  <line x1="336" y1="250" x2="464" y2="250" stroke="#241645" stroke-width="3" stroke-dasharray="6 6"/>
+
+  <rect x="384" y="86" width="32" height="26" rx="6" fill="#241645"/>
+  <rect x="396" y="112" width="8" height="12" fill="#241645"/>
+  <polygon points="400,124 366,250 434,250" fill="#f3a25e" opacity="0.4"/>
+  <circle cx="400" cy="250" r="5" fill="#e8792a"/>
+</svg>
